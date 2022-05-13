@@ -1,36 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# ## Reproducible Deep Learning (PhD course, Data Science)
-# ### Lecture 1: deep learning recap
-
-# We will code a simple audio classification model (a convolutional neural network) for the ESC-50 dataset: https://github.com/karolpiczak/ESC-50. The aim is to recap some deep learning concepts, and have a working notebook to use as starting point for the next exercises.
-
-# **Setup the machine**:
-# 1. Follow the instructions from here: https://github.com/sscardapane/reprodl2021#local-set-up
-# 2. Download the ESC-50 dataset inside a 'data' folder.
-
-# In[ ]:
-
-
 import torch, torchaudio
 from torch import nn
 from torch.nn import functional as F
 
-
-# In[ ]:
-
-
 import pytorch_lightning as pl
 from pytorch_lightning.metrics import functional
-
-
-# In[ ]:
-
-
 from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
+import hydra
+from omegaconf import DictConfig
 
 
 
